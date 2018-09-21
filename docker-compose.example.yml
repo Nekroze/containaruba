@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  ci:
+    image: nekroze/containaruba:latest
+    user: '2000:2000'
+    volumes:
+      - ./features:/usr/src/app/features
