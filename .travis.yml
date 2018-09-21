@@ -8,4 +8,5 @@ services:
 git:
   quiet: true
 
+before_script: chmod 777 ./features
 script: ./test.sh
