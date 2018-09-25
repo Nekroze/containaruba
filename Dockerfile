@@ -15,6 +15,7 @@ LABEL org.label-schema.schema-version="1.0" \
 # version or newer described below.
 ARG VERSION_ARUBA='~> 0.14.6'
 ARG VERSION_CUCUMBER_LINT='~> 0.1.2'
+ARG VERSION_DOCKER_COMPOSE='1.22.0'
 
 RUN echo "Installing Docker-CE" \
  && apt-get update \
@@ -31,8 +32,12 @@ RUN echo "Installing Docker-CE" \
    $(lsb_release -cs) \
    stable" \
  && apt-get update \
- && apt-get install -y docker-ce docker-compose \
+ && apt-get install -y docker-ce \
  && rm -rf /var/lib/apt/lists/* \
+
+RUN echo "Installing Docker Compose" \
+ && curl -L "https://github.com/docker/compose/releases/download/${VERSION_DOCKER_COMPOSE}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+ && chmod +x /usr/local/bin/docker-compose
 
 RUN echo "Installing Gem's Aruba and Cucumber Lint" \
  && gem install cucumber_lint -v "${VERSION_CUCUMBER_LINT}" \
