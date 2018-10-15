@@ -52,5 +52,3 @@ CMD ["features"]
 # This is where you should add or mount your feature files.
 VOLUME /usr/src/app/features
 WORKDIR /usr/src/app
-
-ONBUILD COPY ./features ./
