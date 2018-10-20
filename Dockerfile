@@ -20,11 +20,12 @@ ARG VERSION_DOCKER_COMPOSE='1.22.0'
 RUN echo "Installing Docker-CE" \
  && apt-get update \
  && apt-get install -y \
-    apt-transport-https \
-	ca-certificates \
-	curl \
-	gnupg2 \
-	software-properties-common \
+   apt-transport-https \
+   ca-certificates \
+   curl \
+   gnupg2 \
+   software-properties-common \
+   bsdmainutils \
  && curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
  && apt-key fingerprint 0EBFCD88 \
  &&  add-apt-repository \
