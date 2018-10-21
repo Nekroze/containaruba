@@ -6,7 +6,7 @@ C_GRAY='\033[0;30m'
 C_CLR='\033[0m'
 
 inform() {
-	echo "\n${C_YELLOW}(${C_GRAY}⌐■_■${C_YELLOW}) ${C_CYAN}$*${C_CLR}\n"
+	echo -e "\n${C_YELLOW}(${C_GRAY}⌐■_■${C_YELLOW}) ${C_CYAN}$*${C_CLR}\n"
 }
 
 if [ ! -d features/support ]; then
@@ -17,8 +17,8 @@ fi
 
 # Ensure aruba is included in your support files.
 support_line="require 'aruba/cucumber'"
-if ! grep "$support_line" -R features/support/; then
-	echo "$support_line" >> features/support/aruba.rb
+if ! grep "$support_line" -r features/support/; then
+	echo -e "$support_line" >> features/support/aruba.rb
 	[ "${cleaning:-false}" ] || trap 'rm -f features/support/aruba.rb' EXIT QUIT TERM
 fi
 
