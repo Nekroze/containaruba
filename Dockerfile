@@ -34,7 +34,7 @@ RUN echo "Installing Docker-CE" \
    stable" \
  && apt-get update \
  && apt-get install -y docker-ce \
- && rm -rf /var/lib/apt/lists/* \
+ && rm -rf /var/lib/apt/lists/*
 
 RUN echo "Installing Docker Compose" \
  && curl -L "https://github.com/docker/compose/releases/download/${VERSION_DOCKER_COMPOSE}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
