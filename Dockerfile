@@ -14,7 +14,7 @@ LABEL org.label-schema.schema-version="1.0" \
 ARG VERSION_ARUBA='~> 0.14.6'
 ARG VERSION_CUCUMBER_LINT='~> 0.1.2'
 
-RUN apk add --no-cache docker python3 ca-certificates curl git openssh util-linux ruby ruby-dev bash gmp-dev alpine-sdk \
+RUN apk add --no-cache docker python3 ca-certificates curl git openssh util-linux ruby ruby-dev bash gmp-dev alpine-sdk nss-tools \
  && rm -f /usr/bin/dockerd /usr/bin/docker-containerd* \
  && pip3 install docker-compose
 
