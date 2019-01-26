@@ -7,4 +7,5 @@ services:
     image: nekroze/containaruba:latest
     volumes:
       - ./features:/usr/src/app/features
+      - ./test_results:/output
     user: "${UID:-1000}:${GID:-1000}"
