@@ -26,4 +26,4 @@ inform 'Linting feature files with cucumber_lint!'
 cucumber_lint
 
 inform 'Executing feature files with cucumber!'
-cucumber --color --fail-fast --strict --expand "$@"
+cucumber --format junit --out /output/ --format pretty --color --fail-fast --strict --expand "$@"

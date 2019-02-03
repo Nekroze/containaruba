@@ -46,6 +46,9 @@ RUN echo "Installing Gem's Aruba and Cucumber Lint" \
  && mkdir -p /usr/src/app \
  && chmod 777 /usr/src/app
 
+VOLUME /output
+RUN chmod 777 /output
+
 COPY ./entrypoint.sh ./README.md /
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["features"]
