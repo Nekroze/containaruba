@@ -13,7 +13,7 @@ LABEL org.label-schema.schema-version="1.0" \
 
 # You may specify specific versions or a version selector, by default the
 # version or newer described below.
-ARG VERSION_ARUBA='~> 0.14.6'
+ARG VERSION_ARUBA='~> 0.14.8'
 ARG VERSION_CUCUMBER_LINT='~> 0.1.2'
 ARG VERSION_DOCKER_COMPOSE='1.22.0'
 
